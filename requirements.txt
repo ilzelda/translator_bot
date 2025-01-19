@@ -1,5 +1,4 @@
 discord
 aiogoogletrans
 python-dotenv
-flask
 discord-py

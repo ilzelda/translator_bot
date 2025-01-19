@@ -6,31 +6,6 @@ import json
 import os
 from dotenv import load_dotenv
 
-from flask import Flask
-from threading import Thread
-
-app = Flask('')
-
-@app.route('/')
-def home():
-    return "I'm alive!"
-
-def run():
-    app.run(host='0.0.0.0', port=8080)
-
-# Keep Alive 설정
-def keep_alive():
-    app = Flask('')
-    @app.route('/')
-    def home():
-        return "I'm alive!"
-    def run():
-        app.run(host='0.0.0.0', port=8080)
-    t = Thread(target=run)
-    t.start()
-
-keep_alive()  # 웹 서버 시작
-
 # .env 파일 로드
 load_dotenv()
 
